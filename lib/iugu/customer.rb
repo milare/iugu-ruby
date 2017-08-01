@@ -15,7 +15,7 @@ module Iugu
 
     def default_payment_method
       return false unless @attributes['default_payment_method_id']
-      PaymentMethod.fetch({ id: @attributes['default_payment_method_id'], customer_id: self.id })
+      PaymentMethod.fetch({ id: @attributes['default_payment_method_id'], customer_id: self.id }, options)
     end
   end
 end
